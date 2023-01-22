@@ -29,7 +29,7 @@ function toogleMobileMenu(){
 // ----------------- CARRITO DE COMPRAS ASIDE -----------------
 //Selecciono burgerIcon del navbar y menu mobile
 const shoppingCartIcon = document.querySelector(".navbar-shopping-cart");
-const asideShoppingCartMenu = document.querySelector(".product-detail");
+const asideShoppingCartMenu = document.querySelector("#shoppingCartContainer");
 
 //Agrego evento para mostrar o ocultar menu mobile
 shoppingCartIcon.addEventListener("click",toogleAsideShoppingCartMenu);
@@ -121,3 +121,5 @@ function loadProductsGrid(productList){
         cardsContainer.appendChild(productCard);
     }
 }
+
+// ----------------- PRDUCT DETAIL ASIDE -----------------
