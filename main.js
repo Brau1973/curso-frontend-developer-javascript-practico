@@ -9,6 +9,7 @@ navbarEmail.addEventListener("click",toogleDesktopMenu);
 function toogleDesktopMenu(){
     desktopMenu.classList.toggle("inactive");
 
+    asideProductDetail.classList.add("inactive");
     asideShoppingCartMenu.classList.add("inactive");
 }
 
@@ -39,6 +40,27 @@ function toogleAsideShoppingCartMenu(){
 
     mobileMenu.classList.add("inactive");
     desktopMenu.classList.add("inactive");
+    asideProductDetail.classList.add("inactive");
+}
+
+
+// ----------------- PRODUCT DETAIL -----------------
+const asideProductDetail = document.querySelector("#productDetail");
+
+function openAsideProductDetail(){
+    asideProductDetail.classList.remove("inactive");
+
+    mobileMenu.classList.add("inactive");
+    desktopMenu.classList.add("inactive");
+    asideShoppingCartMenu.classList.add("inactive");
+}
+ 
+// CLOSE IMAGE
+const closeImage = document.querySelector("#img-close");
+closeImage.addEventListener("click",closeAsideProductDetail)
+
+function closeAsideProductDetail(){
+    asideProductDetail.classList.add("inactive");
 }
 
 // ---------------------------------- LOAD PRODUCTS ----------------------------------
@@ -96,6 +118,7 @@ function loadProductsGrid(productList){
 
         const img = document.createElement('img');
         img.setAttribute("src",product.image);
+        img.addEventListener("click",openAsideProductDetail);
         productCard.appendChild(img);
 
         const productInfo = document.createElement('div');
